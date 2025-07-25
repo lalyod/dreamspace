@@ -1,0 +1,5 @@
+require("lyod.remap")
+require("lyod.lazy_init")
+require("lyod.set")
+require("lyod.statusline")
+require("lyod.commands.prettier")

@@ -1,0 +1,160 @@
+* {
+	font-family: "JetBrainsMono Nerd Font";
+}
+
+window#waybar {
+	background: black;
+	color: white;
+	border-radius: 3px;
+}
+
+.modules-right {
+	margin: 5px;
+}
+
+.modules-left {
+	margin: 5px;
+}
+
+.modules-center {
+	margin: 5px;
+	padding: 0 5px;
+	border-radius: 3px;
+	background-color: gray;
+}
+
+#clock {
+	border-radius: 0 3px 3px 0;
+	padding: 0 5px;
+	border: 2px solid #8ABA78;
+	color: #8ABA78;
+}
+
+#custom-clock-label {
+	margin: 0 0 0 5px;
+	border-radius: 3px 0 0 3px;
+	padding: 0 7px;
+	color: black;
+	background: #8ABA78;
+	font-weight: 600;
+}
+
+#pulseaudio {
+	border-radius: 0 3px 3px 0;
+	padding: 0 5px;
+	border: 2px solid #87A498;
+	color: #87A498;
+}
+
+#custom-pulseaudio-label {
+	margin: 0 0 0 5px;
+	border-radius: 3px 0 0 3px;
+	padding: 0 7px;
+	color: black;
+	background: #87A498;
+	font-weight: 600;
+}
+
+#memory {
+	border-radius: 0 3px 3px 0;
+	padding: 0 5px;
+	border: 2px solid #478687;
+	color: #478687;
+}
+
+#custom-memory-label {
+	margin: 0 0 0 5px;
+	border-radius: 3px 0 0 3px;
+	padding: 0 7px;
+	color: black;
+	background: #478687;
+	font-weight: 600;
+}
+
+#cpu {
+	border-radius: 0 3px 3px 0;
+	padding: 0 5px;
+	border: 2px solid #E78B4E;
+	color: #E78B4E;
+}
+
+#custom-cpu-label {
+	margin: 0 0 0 5px;
+	border-radius: 3px 0 0 3px;
+	padding: 0 7px;
+	color: black;
+	background: #E78B4E;
+	font-weight: 600;
+}
+
+#temperature {
+	border-radius: 0 3px 3px 0;
+	padding: 0 5px;
+	border: 2px solid #DAA752;
+	color: #DAA752;
+}
+
+#custom-temperature-label {
+	margin: 0 0 0 5px;
+	border-radius: 3px 0 0 3px;
+	padding: 0 7px;
+	color: black;
+	background: #DAA752;
+	font-weight: 600;
+}
+
+#disk {
+	border-radius: 0 3px 3px 0;
+	padding: 0 5px;
+	border: 2px solid #EC655E;
+	color: #EC655E;
+}
+
+#custom-disk-label {
+	margin: 0 0 0 5px;
+	border-radius: 3px 0 0 3px;
+	padding: 0 7px;
+	color: black;
+	background: #EC655E;
+	font-weight: 600;
+}
+
+#window {
+	border-radius: 0 3px 3px 0;
+	padding: 0 5px;
+	border: 2px solid #BF7A8F;
+	color: #BF7A8F;
+}
+
+#custom-window-label {
+	margin: 0 0 0 5px;
+	border-radius: 3px 0 0 3px;
+	padding: 0 7px;
+	color: black;
+	background: #BF7A8F;
+	font-weight: 600;
+}
+
+#custom-arch {
+	background: lightgreen;
+	border-radius: 3px;
+	border: 2px solid green;
+	padding: 0 0px 0 5px;
+	color: black;
+}
+
+#mpris {
+	border-radius: 0 3px 3px 0;
+	padding: 0 5px;
+	border: 2px solid gray;
+	color: gray;
+}
+
+#custom-mpris-label {
+	margin: 0 0 0 5px;
+	border-radius: 3px 0 0 3px;
+	padding: 0 7px;
+	color: black;
+	background: gray;
+	font-weight: 600;
+}

@@ -1,0 +1,141 @@
+// -*- mode: json -*-
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "reload_style_on_change": true,
+  "margin": 3,
+
+  "modules-left": [
+    "custom/arch",
+    "custom/mpris-label",
+    "mpris",
+    "custom/window-label",
+    "hyprland/window",
+  ],
+
+  "modules-center": [
+	  "network",
+	  "tray"
+  ],
+
+  "modules-right": [
+    "custom/disk-label",
+    "disk",
+    "custom/cpu-label",
+    "cpu",
+    "custom/temperature-label",
+    "temperature",
+    "custom/memory-label",
+    "memory",
+    "custom/pulseaudio-label",
+    "pulseaudio",
+    "custom/clock-label",
+    "clock#day",
+  ],
+
+  "custom/clock-label": {
+    "format": "DAY",
+  },
+
+  "clock#day": {
+    "format": "{:%H:%M:%S %m-%d,%a}",
+    "tooltip": false,
+  },
+
+  "network": {
+    "format": " ",
+    "format-disabled": "󰖪 ",
+    "tooltip-format-ethernet": "Interface Name: {ifname}\nIP Address: {ipaddr}\nRouter: {gwaddr}\nSpeed: {bandwidthDownBytes}  | {bandwidthUpBytes} ",
+    "tooltip-format-wifi": "Wi-Fi: Connected\nSSID: {essid}\nSpeed: {bandwidthDownBytes}  | {bandwidthUpBytes} ",
+    "tooltip-format-disconnected": "Wi-Fi: Disconnected",
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/wifi_menu.xml",
+  },
+
+  "custom/window-label": {
+    "format": "WIN",
+  },
+
+  "hyprland/window": {
+    "format": "{class}",
+  },
+
+  "custom/arch": {
+    "format": "󰣇 ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+    },
+  },
+
+  "custom/pulseaudio-label": {
+    "format": "VOL",
+  },
+
+  "pulseaudio": {
+    "format": "{volume}%",
+    "format-bluetooth": "{icon}",
+    "format-muted": " ",
+    "format-icons": {
+      "headphones": " ",
+      "default": [" ", " "],
+    },
+    "tooltip-format": "Output: {desc}\nVolume: {volume}%",
+    "scroll-step": 5,
+    "on-click": "pamixer -t",
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menus/sound_menu.xml",
+  },
+
+  "custom/memory-label": {
+    "format": "MEM",
+  },
+  "memory": {
+    "interval": 5,
+    "format": "{}%",
+  },
+
+  "custom/cpu-label": {
+    "format": "CPU",
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "{usage:2}%",
+  },
+
+  "custom/temperature-label": {
+    "format": "TMP",
+  },
+  "temperature": {
+    "format": "{temperatureC}°C",
+  },
+  "custom/disk-label": {
+    "format": "DSK",
+  },
+  "disk": {
+    "interval": 3600,
+    "format": "{percentage_used:2}%",
+    "path": "/",
+  },
+
+  "custom/mpris-label": {
+    "format": "MDP",
+  },
+  "mpris": {
+    "format": "{title}",
+    "ellipsis": "...",
+    "title-len": 10,
+    "status-icons": {
+      "playing": " ",
+      "paused": "",
+      "stopped": " ",
+    },
+  },
+}
