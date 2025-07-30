@@ -1,0 +1,6 @@
+[global]
+	font = "JetBrainsMono Nerd Font 10"
+	format = "<b>%s</b>\n%b"
+	sort = yes
+	progress_bar = true
+	corner_radius = 10
