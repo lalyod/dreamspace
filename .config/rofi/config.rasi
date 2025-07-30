@@ -1,0 +1,139 @@
+configuration {
+	display-drun: "Apps:";
+	drun-display-format: "{icon} {name}";
+	modi: "window,run,drun";
+	prompt: "  Search";
+	font: "JetBrainsMono Nerd Font medium 12";
+	location: 1;
+	yoffset: 45;
+	xoffset: 5;
+	lines: 3;
+	show-icons: true;
+	filebrowser {
+		directories-first: true;
+		sorting-method: "name";
+	}
+}
+
+* {
+	background: black;
+	border-color: #EC655E;
+	normal-background: transparent;
+	alternate-normal-background: transparent;
+	selected-normal-background: #EC655E;
+}
+
+window {
+	background-color: @background;
+	padding: 10px;
+	width: 30%;
+	height: 50%;
+	border: 0;
+}
+
+listview {
+	margin: 1px 2px 0 2px;
+	border: 0;
+	scrollbar: false;
+	border-color: @border-color;
+}
+
+mainbox {
+	border: 0;
+	padding: 0;
+}
+
+textbox {
+	text-color: white;
+}
+
+scrollbar {
+	width: 0;
+	border: 0;
+	padding: 0;
+	handle-width: 0;
+}
+
+element {
+	border-radius: 3px;
+	padding: 0 0 0 6px;
+}
+
+element-text {
+    background-color: black;
+	padding: 5px 0;
+	margin: 0;
+    text-color: inherit;
+}
+element.normal.normal {
+    background-color: @normal-background;
+    text-color: white;
+}
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color: white;
+}
+element.normal.active {
+    background-color: @active-background;
+    text-color: white;
+}
+element.selected.normal {
+	border: 2px;
+    background-color: @selected-normal-background;
+    text-color: @border-color;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color: @border-color;
+}
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color: @border-color;
+}
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color: white;
+}
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color: white;
+}
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color: white;
+}
+
+case-indicator {
+	spacing: 0;
+	text-color: white;
+}
+
+entry {
+	spacing: 0;
+	text-color: white;
+	padding: 0;
+	border: 2px 2px 2px 0;
+	padding: 5px;
+	border-color: @border-color;
+	border-radius: 0 3px 3px 0;
+}
+
+prompt {
+	spacing: 0;
+	text-color: black;
+	font: "JetBrainsMono Nerd Font bold 12";
+	font-weight: 700;
+	padding: 8px;
+	background-color: @border-color;
+	border-radius: 3px 0 0 3px;
+}
+
+inputbar {
+	children: [ prompt, entry ];
+}
+
+textbox-prompt-colon {
+	expand: false;
+	str: "";
+	text-color: white;
+}
