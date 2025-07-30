@@ -5,6 +5,10 @@ end, {})
 vim.api.nvim_create_autocmd('BufWritePost', {
 	pattern = { "*.js", "*.ts", "*.tsx" , "*.jsx"},
 	callback = function() 
+		local notif = vim.notify("Prettiering...", vim.log.levels.INFO, {
+			timeout = false
+		})
+
 		local filepath = vim.fn.expand("%:P")
 		vim.loop.spawn("prettier", {
 			args = { "--write", filepath },
@@ -13,6 +17,10 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 			vim.schedule(function()
 				if code == 0 then
 					vim.cmd("edit")
+					vim.notify("Done!", vim.log.levels.INFO, {
+						replace = notif,
+						timeout = 1000
+					})
 				else
 					vim.notify("Prettier failed with code " .. code, vim.log.levels.ERROR)
 				end
