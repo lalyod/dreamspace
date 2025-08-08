@@ -5,7 +5,8 @@ end, {})
 vim.api.nvim_create_autocmd('BufWritePost', {
 	pattern = { "*.js", "*.ts", "*.tsx" , "*.jsx"},
 	callback = function() 
-		local notif = vim.notify("Prettiering...", vim.log.levels.INFO, {
+		local notif = vim.notify("Prettiering a file please wait...", vim.log.levels.INFO, {
+			title = "Prettier",
 			timeout = false
 		})
 
@@ -17,7 +18,8 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 			vim.schedule(function()
 				if code == 0 then
 					vim.cmd("edit")
-					vim.notify("Done!", vim.log.levels.INFO, {
+					vim.notify("Done!", vim.log.levels.SUCCESS, {
+						title = 'Prettier',
 						replace = notif,
 						timeout = 1000
 					})

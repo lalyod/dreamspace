@@ -1,0 +1,1 @@
+require('lyod.commands.prettier')
