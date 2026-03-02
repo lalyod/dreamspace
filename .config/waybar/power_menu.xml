@@ -2,33 +2,27 @@
 <interface>
 	<object class="GtkMenu" id="menu">
 		<child>
-			<object class="GtkMenuItem" id="title-group" >
-				<property name="label">Power Options</property>
-				<property name="sensitive">False</property>
+			<object class="GtkMenuItem" id="suspend">
+				<property name="label">Suspend</property>
 			</object>
 		</child>
-	<child>
-		<object class="GtkCheckMenuItem" id="suspend">
-			<property name="label">Suspend</property>
-        </object>
-	</child>
-	<child>
-        <object class="GtkMenuItem" id="hibernat">
-			<property name="label">Hibernate</property>
-        </object>
-	</child>
-    <child>
-        <object class="GtkMenuItem" id="shutdown">
-			<property name="label">Shutdown</property>
-        </object>
-    </child>
-    <child>
-      <object class="GtkSeparatorMenuItem" id="delimiter1"/>
-    </child>
-    <child>
-		<object class="GtkMenuItem" id="reboot">
-			<property name="label">Reboot</property>
-		</object>
-    </child>
+		<child>
+			<object class="GtkMenuItem" id="hibernat">
+				<property name="label">Hibernate</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="shutdown">
+				<property name="label">Shutdown</property>
+			</object>
+		</child>
+		<child>
+		  <object class="GtkSeparatorMenuItem" id="delimiter1"/>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="reboot">
+				<property name="label">Reboot</property>
+			</object>
+		</child>
   </object>
 </interface>

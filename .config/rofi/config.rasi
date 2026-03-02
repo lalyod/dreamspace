@@ -1,12 +1,9 @@
 configuration {
-	display-drun: "Apps:";
+	display-drun: "";
 	drun-display-format: "{icon} {name}";
 	modi: "window,run,drun";
 	prompt: "  Search";
-	font: "JetBrainsMono Nerd Font medium 12";
-	location: 1;
-	yoffset: 45;
-	xoffset: 5;
+	font: "SF Pro Medium normal 12";
 	lines: 3;
 	show-icons: true;
 	filebrowser {
@@ -16,26 +13,30 @@ configuration {
 }
 
 * {
-	background: black;
-	border-color: #EC655E;
+	background: rgba(0, 0, 0, 0.4);
+	border-color: rgba(255, 255, 255, 0.2);
 	normal-background: transparent;
 	alternate-normal-background: transparent;
-	selected-normal-background: #EC655E;
+	selected-normal-background: rgba(255, 255, 255, 0.1);
 }
 
 window {
 	background-color: @background;
-	padding: 10px;
-	width: 30%;
-	height: 50%;
+	width: 600;
+	height: 500;
+	border-radius: 15px;
 	border: 0;
+	padding: 0;
+	margin: 0;
+	border: 1;
+	border-color: @border-color;
 }
 
 listview {
-	margin: 1px 2px 0 2px;
 	border: 0;
 	scrollbar: false;
 	border-color: @border-color;
+	margin: 0 10px;
 }
 
 mainbox {
@@ -55,12 +56,11 @@ scrollbar {
 }
 
 element {
-	border-radius: 3px;
-	padding: 0 0 0 6px;
+	border-radius: 10px;
+	padding: 8px 12px;
 }
 
 element-text {
-    background-color: black;
 	padding: 5px 0;
 	margin: 0;
     text-color: inherit;
@@ -78,17 +78,17 @@ element.normal.active {
     text-color: white;
 }
 element.selected.normal {
-	border: 2px;
     background-color: @selected-normal-background;
-    text-color: @border-color;
+	border: 2px;
+    text-color: white;
 }
 element.selected.urgent {
     background-color: @selected-urgent-background;
-    text-color: @border-color;
+    text-color: white;
 }
 element.selected.active {
     background-color: @selected-active-background;
-    text-color: @border-color;
+    text-color: white;
 }
 element.alternate.normal {
     background-color: @alternate-normal-background;
@@ -112,10 +112,9 @@ entry {
 	spacing: 0;
 	text-color: white;
 	padding: 0;
-	border: 2px 2px 2px 0;
-	padding: 5px;
+	border:  0 0 1px 0;
+	padding: 15px 15px;
 	border-color: @border-color;
-	border-radius: 0 3px 3px 0;
 }
 
 prompt {
@@ -129,7 +128,7 @@ prompt {
 }
 
 inputbar {
-	children: [ prompt, entry ];
+	children: [ entry ];
 }
 
 textbox-prompt-colon {

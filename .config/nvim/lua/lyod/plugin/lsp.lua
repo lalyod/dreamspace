@@ -50,6 +50,28 @@ return {
 			lsp_zero.default_keymaps({ buffer = bufnr })
 		end)
 
+		lsp_zero.configure("lua_ls", {
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+					},
+					diagnostics = {
+						globals = { "vim" },
+					},
+					workspace = {
+						library = {
+							vim.env.VIMRUNTIME,
+						},
+						checkThirdParty = false,
+					},
+					telemetry = {
+						enable = false,
+					},
+				},
+			},
+		})
+
 		require("luasnip.loaders.from_vscode").lazy_load()
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
@@ -80,6 +102,7 @@ return {
 		})
 
 		lsp_zero.setup()
+
 		cmp.setup({
 			sources = {
 				{ name = "luasnip" },

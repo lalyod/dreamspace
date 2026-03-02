@@ -1,141 +1,124 @@
 // -*- mode: json -*-
 
 {
-  "layer": "top",
-  "position": "top",
-  "height": 30,
-  "reload_style_on_change": true,
-  "margin": 3,
+	"layer": "top",
+	"position": "top",
+	"height": 10,
+	"reload_style_on_change": true,
 
-  "modules-left": [
-    "custom/arch",
-    "custom/mpris-label",
-    "mpris",
-    "custom/window-label",
-    "hyprland/window",
-  ],
+	"modules-left": ["custom/arch", "custom/window"],
 
-  "modules-center": [
-	  "network",
-	  "tray"
-  ],
+	"modules-right": [
+		"tray",
+		"privacy",
+		"pulseaudio",
+		"bluetooth",
+		"network",
+		"clock"
+	],
 
-  "modules-right": [
-    "custom/disk-label",
-    "disk",
-    "custom/cpu-label",
-    "cpu",
-    "custom/temperature-label",
-    "temperature",
-    "custom/memory-label",
-    "memory",
-    "custom/pulseaudio-label",
-    "pulseaudio",
-    "custom/clock-label",
-    "clock#day",
-  ],
+	"clock": {
+		"format": "{:%a %d %b %H:%M %p}"
+	},
 
-  "custom/clock-label": {
-    "format": "DAY",
-  },
+	"bluetooth": {
+		"format": "",
+		"format-connected": "{icon} {device_alias} {device_battery_percentage}%",
+		"format-icons": ["󰥂", "󰥈"]
+	},
 
-  "clock#day": {
-    "format": "{:%H:%M:%S %m-%d,%a}",
-    "tooltip": false,
-  },
+	"network": {
+		"format": "{icon}",
+		"format-ethernet": "{icon}",
+		"format-disabled": "󰖪 ",
+		"format-icons": ["󰤟", "󰤢", "󰤨"],
+		"tooltip-format-ethernet": "Interface Name: {ifname}\nIP Address: {ipaddr}\nRouter: {gwaddr}\nSpeed: {bandwidthDownBytes}  | {bandwidthUpBytes} ",
+		"tooltip-format-wifi": "Wi-Fi: Connected\nSSID: {essid}\nSpeed: {bandwidthDownBytes}  | {bandwidthUpBytes} ",
+		"tooltip-format-disconnected": "Wi-Fi: Disconnected"
+	},
 
-  "network": {
-    "format": " ",
-    "format-disabled": "󰖪 ",
-    "tooltip-format-ethernet": "Interface Name: {ifname}\nIP Address: {ipaddr}\nRouter: {gwaddr}\nSpeed: {bandwidthDownBytes}  | {bandwidthUpBytes} ",
-    "tooltip-format-wifi": "Wi-Fi: Connected\nSSID: {essid}\nSpeed: {bandwidthDownBytes}  | {bandwidthUpBytes} ",
-    "tooltip-format-disconnected": "Wi-Fi: Disconnected",
-    "menu": "on-click",
-    "menu-file": "~/.config/waybar/wifi_menu.xml",
-  },
+	"hyprland/workspaces": {
+		"format": " ",
+		"persistent-workspaces": {
+			"*": 3
+		}
+	},
 
-  "custom/window-label": {
-    "format": "WIN",
-  },
+	"hyprland/window": {
+		"format": "{class}",
+		"icon": true,
+		"icon-size": 20
+	},
 
-  "hyprland/window": {
-    "format": "{class}",
-  },
+	"tray": {
+		"icon-size": 18,
+		"spacing": 10
+	},
 
-  "custom/arch": {
-    "format": "󰣇 ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "~/.config/waybar/power_menu.xml",
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate",
-    },
-  },
+	"custom/arch": {
+		"format": "󰣇",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "~/dotfiles/.config/waybar/power_menu.xml",
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+	},
 
-  "custom/pulseaudio-label": {
-    "format": "VOL",
-  },
+	"custom/window": {
+		"exec": "~/dotfiles/.config/waybar/scripts/window.sh",
+		"signal": 10
+	},
 
-  "pulseaudio": {
-    "format": "{volume}%",
-    "format-bluetooth": "{icon}",
-    "format-muted": " ",
-    "format-icons": {
-      "headphones": " ",
-      "default": [" ", " "],
-    },
-    "tooltip-format": "Output: {desc}\nVolume: {volume}%",
-    "scroll-step": 5,
-    "on-click": "pamixer -t",
-    "menu": "on-click-right",
-    "menu-file": "~/.config/waybar/menus/sound_menu.xml",
-  },
+	"pulseaudio": {
+		"format": "{icon}",
+		"format-bluetooth": "{icon}",
+		"format-muted": " ",
+		"format-icons": {
+			"headphones": " ",
+			"default": ["", ""]
+		},
+		"tooltip-format": "Output: {desc}\nVolume: {volume}%",
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"menu": "on-click-right",
+		"menu-file": "~/.config/waybar/menus/sound_menu.xml"
+	},
 
-  "custom/memory-label": {
-    "format": "MEM",
-  },
-  "memory": {
-    "interval": 5,
-    "format": "{}%",
-  },
+	"memory": {
+		"interval": 5,
+		"format": "{}%"
+	},
 
-  "custom/cpu-label": {
-    "format": "CPU",
-  },
-  "cpu": {
-    "interval": 5,
-    "format": "{usage:2}%",
-  },
+	"cpu": {
+		"interval": 5,
+		"format": "{usage:2}%"
+	},
 
-  "custom/temperature-label": {
-    "format": "TMP",
-  },
-  "temperature": {
-    "format": "{temperatureC}°C",
-  },
-  "custom/disk-label": {
-    "format": "DSK",
-  },
-  "disk": {
-    "interval": 3600,
-    "format": "{percentage_used:2}%",
-    "path": "/",
-  },
+	"privacy": {
+		"icon-size": 12
+	},
 
-  "custom/mpris-label": {
-    "format": "MDP",
-  },
-  "mpris": {
-    "format": "{title}",
-    "ellipsis": "...",
-    "title-len": 10,
-    "status-icons": {
-      "playing": " ",
-      "paused": "",
-      "stopped": " ",
-    },
-  },
+	"temperature": {
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": ["", "", ""],
+		"warning-threshold": 60,
+		"critical-threshold": 100
+	},
+
+	"mpris": {
+		"format": "{status_icon} {dynamic}",
+		"title-len": 20,
+		"artist-len": 10,
+		"interval": 1,
+		"ellipsis": "...",
+		"status-icons": {
+			"playing": "",
+			"paused": "",
+			"stopped": ""
+		}
+	}
 }

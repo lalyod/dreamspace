@@ -1,160 +1,80 @@
 * {
-	font-family: "JetBrainsMono Nerd Font";
+	font-family: "SF Pro", sans-serif;
+	font-size: 14px;
 }
 
 window#waybar {
-	background: black;
+	background: rgba(0, 0, 0, 0.2);
 	color: white;
 	border-radius: 3px;
 }
 
+tooltip {
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 5px;
+	padding: 5px;
+	color: white;
+}
+
 .modules-right {
-	margin: 5px;
+	margin: 3px;
 }
 
 .modules-left {
-	margin: 5px;
+	margin: 1px;
 }
 
-.modules-center {
-	margin: 5px;
-	padding: 0 5px;
-	border-radius: 3px;
-	background-color: gray;
-}
-
-#clock {
-	border-radius: 0 3px 3px 0;
-	padding: 0 5px;
-	border: 2px solid #8ABA78;
-	color: #8ABA78;
-}
-
-#custom-clock-label {
-	margin: 0 0 0 5px;
-	border-radius: 3px 0 0 3px;
-	padding: 0 7px;
-	color: black;
-	background: #8ABA78;
-	font-weight: 600;
+#bluetooth {
+	margin-left: 5px;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 0 10px;
+	border-radius: 10px;
 }
 
 #pulseaudio {
-	border-radius: 0 3px 3px 0;
-	padding: 0 5px;
-	border: 2px solid #87A498;
-	color: #87A498;
+	margin-right: 15px;
 }
 
-#custom-pulseaudio-label {
-	margin: 0 0 0 5px;
-	border-radius: 3px 0 0 3px;
-	padding: 0 7px;
-	color: black;
-	background: #87A498;
+#pulseaudio.muted {
+	margin-right: 7px;
+}
+
+#custom-window {
 	font-weight: 600;
-}
-
-#memory {
-	border-radius: 0 3px 3px 0;
-	padding: 0 5px;
-	border: 2px solid #478687;
-	color: #478687;
-}
-
-#custom-memory-label {
-	margin: 0 0 0 5px;
-	border-radius: 3px 0 0 3px;
-	padding: 0 7px;
-	color: black;
-	background: #478687;
-	font-weight: 600;
-}
-
-#cpu {
-	border-radius: 0 3px 3px 0;
-	padding: 0 5px;
-	border: 2px solid #E78B4E;
-	color: #E78B4E;
-}
-
-#custom-cpu-label {
-	margin: 0 0 0 5px;
-	border-radius: 3px 0 0 3px;
-	padding: 0 7px;
-	color: black;
-	background: #E78B4E;
-	font-weight: 600;
-}
-
-#temperature {
-	border-radius: 0 3px 3px 0;
-	padding: 0 5px;
-	border: 2px solid #DAA752;
-	color: #DAA752;
-}
-
-#custom-temperature-label {
-	margin: 0 0 0 5px;
-	border-radius: 3px 0 0 3px;
-	padding: 0 7px;
-	color: black;
-	background: #DAA752;
-	font-weight: 600;
-}
-
-#disk {
-	border-radius: 0 3px 3px 0;
-	padding: 0 5px;
-	border: 2px solid #EC655E;
-	color: #EC655E;
-}
-
-#custom-disk-label {
-	margin: 0 0 0 5px;
-	border-radius: 3px 0 0 3px;
-	padding: 0 7px;
-	color: black;
-	background: #EC655E;
-	font-weight: 600;
-}
-
-#window {
-	border-radius: 0 3px 3px 0;
-	padding: 0 5px;
-	border: 2px solid #BF7A8F;
-	color: #BF7A8F;
-}
-
-#custom-window-label {
-	margin: 0 0 0 5px;
-	border-radius: 3px 0 0 3px;
-	padding: 0 7px;
-	color: black;
-	background: #BF7A8F;
-	font-weight: 600;
+	margin-left: 10px;
 }
 
 #custom-arch {
-	background: lightgreen;
-	border-radius: 3px;
-	border: 2px solid green;
-	padding: 0 0px 0 5px;
-	color: black;
+	padding: 0 11px 0 7px;
+	font-size: 14px;
+	border-radius: 15px;
 }
 
-#mpris {
-	border-radius: 0 3px 3px 0;
-	padding: 0 5px;
-	border: 2px solid gray;
-	color: gray;
+#custom-arch:hover {
+	transition: color 0.3s;
+	color: red;
 }
 
-#custom-mpris-label {
-	margin: 0 0 0 5px;
-	border-radius: 3px 0 0 3px;
-	padding: 0 7px;
-	color: black;
-	background: gray;
+#mpris.paused {
+	color: red;
+}
+
+#tray {
+	margin-left: 5px;
+	padding: 0 10px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+#network {
+	margin-right: 15px;
+	padding: 0 10px;
+	border-radius: 10px;
+	font-size: 15px;
+}
+
+#clock {
 	font-weight: 600;
+	font-size: 12px;
+	margin-right: 10px;
 }

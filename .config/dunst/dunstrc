@@ -1,6 +1,17 @@
 [global]
-	font = "JetBrainsMono Nerd Font 10"
+	origin = top-right
+	offset = (8, 0)
+	font = "SF Pro 10"
 	format = "<b>%s</b>\n%b"
 	sort = yes
 	progress_bar = true
 	corner_radius = 10
+	width = 400
+	frame_width = 0
+	icon_position = left
+	background = "#181818E6"
+	padding = 10
+	horizontal_padding = 13
+	icon_corner_radius = 10
+	word_wrap = false
+	ellipsize = end
