@@ -1,0 +1,30 @@
+.dock-window {
+  background: transparent;
+}
+
+.dock {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  padding: 6px 5px 0px 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+}
+
+.dock button {
+  background: transparent;
+  border: none;
+}
+
+.dock button:active {
+  opacity: 0.7;
+}
+
+.dot-active {
+  font-size: 6px;
+  color: white;
+}
+
+.dot-inactive {
+  font-size: 6px;
+  color: transparent;
+}

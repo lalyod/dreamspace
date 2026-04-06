@@ -1,0 +1,13 @@
+(defpoll dock-yuck :interval "1s" :initial "(box :class \"dock\")"
+  `/home/lyod/.config/eww/generate-dock.sh`)
+
+(defwidget dock []
+  (literal :content dock-yuck))
+
+(defwindow dock-window
+  :monitor 0
+  :geometry (geometry :anchor "bottom center")
+  :windowtype "dock"
+  :exclusive true
+  (dock)
+)
