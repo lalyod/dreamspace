@@ -4,7 +4,7 @@
 ACTION="$1"
 APP="$2"
 
-FAVORITES_FILE="/home/lyod/.config/eww/favorites.txt"
+FAVORITES_FILE="$HOME/dotfiles/.config/eww/favorites.txt"
 
 if [ ! -f "$FAVORITES_FILE" ]; then
     echo "firefox,com.mitchellh.ghostty,org.kde.dolphin,code,gnome-control-center" > "$FAVORITES_FILE"

@@ -1,8 +1,20 @@
 (defpoll dock-yuck :interval "1s" :initial "(box :class \"dock\")"
-  `/home/lyod/.config/eww/generate-dock.sh`)
+  `/home/ucup/.config/eww/generate-dock.sh`)
 
 (defwidget dock []
   (literal :content dock-yuck))
+
+(defwidget menu[]
+  (box :class "menu"
+	(button :onclick "notify 'hello'" "Click me")
+  )
+)
+
+(defwindow menu-window
+  :monitor 0
+  :geometry (geometry :y "10" :anchor "bottom center" :width "200px" :height "100px")
+  (menu)
+)
 
 (defwindow dock-window
   :monitor 0
